@@ -1,1 +1,29 @@
-<header ngheader=""></header><section class="content"><header><img src="images/angularjs.png" class="logo"/></header><div class="buttons row"><a ng-repeat="lib in data.libs" href="{{lib.url}}" target="_black" class="btn btn-default btn-sm">{{lib.name}}</a></div></section><footer ngfooter=""></footer>
+<header ngheader=""></header>
+<section class="content">
+  <div class="buttons row">
+    <a ng-repeat="lib in data.libs" href="{{lib.url}}" target="_black" class="btn btn-default btn-sm">{{lib.name}}</a>
+  </div>
+  <table ng-table="vm.tableParams" show-filter="false" class="table table-condensed table-bordered table-striped">
+    <tr ng-repeat="card in data.exampleTableData">
+      <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+        {{card.name}}
+      </td>
+      <td title="'Alignment'" filter="{ alignment: 'text'}" sortable="'alignment'">
+        {{card.alignment}}
+      </td>
+      <td title="'Type'" filter="{ type: 'text'}" sortable="'type'">
+        {{card.type}}
+      </td>
+      <td title="'Resource Cost'" filter="{ resource_cost: 'integer'}" sortable="'resource_cost'">
+        {{card.resource_cost}}
+      </td>
+      <td title="'Dice'" filter="{ dice: 'boolean'}" sortable="'dice'">
+        {{card.has_dice}}
+      </td>
+      <td title="'Set'" filter="{ set: 'text'}" sortable="'set'">
+        {{card.set}} {{card.set_number}}
+      </td>
+    </tr>
+  </table>
+</section>
+<footer ngfooter=""></footer>
