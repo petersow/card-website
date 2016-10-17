@@ -10,7 +10,8 @@
     "email": "mail@zguillez.io",
     "url": "https://github.com/zguillez"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "bower": "^1.7.9",
     "connect-livereload": "^0.5.4",

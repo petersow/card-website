@@ -1,9 +1,16 @@
 'use strict';
 module.exports = function(grunt) {
+  grunt.initConfig({
+		'gh-pages': {
+			options: {
+				base: 'dist'
+			},
+			src: ['**']
+		}
+	});
 	require('load-grunt-tasks')(grunt);
 	require('./grunt/jshint')(grunt);
 	require('./grunt/clean')(grunt);
-	require('./grunt/jade')(grunt);
 	require('./grunt/copy')(grunt);
 	require('./grunt/merge')(grunt);
 	require('./grunt/sass')(grunt);
@@ -15,21 +22,13 @@ module.exports = function(grunt) {
 	require('./grunt/clean-dist')(grunt);
 	grunt.registerTask('default', ['serve']);
 	grunt.registerTask('serve', function() {
-		grunt.task.run(['clean:dist', 'jshint', 'uglify', 'jade', 'sass', 'copy', 'clean-dist', 'connect', 'open', 'watch']);
+		grunt.task.run(['clean:dist', 'jshint', 'uglify', 'sass', 'copy', 'clean-dist', 'connect', 'open', 'watch']);
 	});
 	grunt.registerTask('build', function() {
-		grunt.task.run(['clean:dist', 'jshint', 'uglify', 'jade', 'sass', 'copy', 'clean-dist']);
+		grunt.task.run(['clean:dist', 'jshint', 'uglify', 'sass', 'copy', 'clean-dist']);
 	});
 	grunt.registerTask('rebuild', function() {
-		grunt.task.run(['clean:dist', 'uglify', 'jade', 'sass', 'copy', 'clean-dist']);
+		grunt.task.run(['clean:dist', 'uglify', 'sass', 'copy', 'clean-dist']);
 	});
 	grunt.loadNpmTasks('grunt-gh-pages');
-	grunt.initConfig({
-		'gh-pages': {
-			options: {
-				base: 'dist'
-			},
-			src: ['**']
-		}
-	});
 };
