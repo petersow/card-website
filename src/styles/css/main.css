@@ -1,7 +1,7 @@
 body {
-  background: #90C2E7;
+  background: white;
   text-align: center;
-  color: #312F2F;
+  color: black;
   font-size: 16px;
   font-family: "LatoWeb", sans-serif; }
 
@@ -9,11 +9,11 @@ footer {
   font-size: 0.8em; }
 
 header .headerContainer {
-  background: #312F2F; }
+  background: black; }
 header .title {
   float: left;
   margin-left: 10px;
-  color: #CED3DC; }
+  color: #0088e5; }
 header img.logo {
   height: 75px;
   float: left; }
@@ -22,18 +22,18 @@ table {
   text-align: left; }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background: #90C2E7; }
+  background: white; }
 
 .table-striped > tbody > tr:nth-of-type(even) {
-  background: #478DB2; }
+  background: #36c4ec; }
 
 .table-bordered {
   border: none;
-  border-top: 1px solid #312F2F; }
+  border-top: 1px solid #0088e5; }
 
 .table-bordered > thead > tr > th {
   border: none;
-  border-bottom: 1px solid #312F2F; }
+  border-bottom: 1px solid #0088e5; }
 
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td,
