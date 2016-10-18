@@ -50,4 +50,7 @@ section.content {
   section.content .alignmentIcon {
     width: 16px; }
 
+.cardViewContainer img {
+  max-height: 250px; }
+
 /*# sourceMappingURL=main.css.map */
