@@ -18,9 +18,10 @@
     "flavour": "I think I can handle myself.",
     "rarity": "starter",
     "text": "After you play an upgrade on this character, you may take one additional action.",
-    "image_url": "TODO",
+    "image_url": "https://images-cdn.fantasyflightgames.com/filer_public/17/80/17801d2c-b44b-4422-bb17-ac06f45e817f/swd02_rey.png",
     "point_value": 9,
     "elite_point_value": 12,
+    "has_dice": true,
     "dice_sides": [
       {
         "type": "melee",
@@ -64,6 +65,7 @@
     "deck_limit": 1,
     "name": "Kylo Ren",
     "unique": true,
+    "has_dice": true,
     "character_sub_title": "Vader's Disciple",
     "health": 11,
     "game": "star-wars-destiny",

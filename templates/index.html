@@ -5,31 +5,38 @@
   </div>
   <table ng-table="vm.tableParams" show-filter="false" class="table table-condensed table-bordered table-striped">
     <tr ng-repeat="card in data.exampleTableData">
-      <td title="'Name'" class="nameCol" filter="{ name: 'text'}" sortable="'name'">
+      <td title="'Name'" class="leftAlignCol" filter="{ name: 'text'}" sortable="'name'">
         <a ng-mouseover="clickToOpen(card)" ng-mouseleave="closeAll()" > {{card.name}} </a>
       </td>
       <td title="'Alignment'" filter="{ alignment: 'text'}" sortable="'alignment'">
         <img ng-if="card.alignment == 'villain'" src="http://i.imgur.com/xMw13Rt.png"
-         alt='Villain' class="alignmentIcon">
+         title='Villain' class="alignmentIcon">
         <img ng-if="card.alignment == 'hero'" src="http://i.imgur.com/19X4awj.png"
-        alt='Hero' class="alignmentIcon">
+        title='Hero' class="alignmentIcon">
         <img ng-if="card.alignment == 'neutral'" src="http://i.imgur.com/Q5fYJ9L.png"
-        alt='Neutral' class="alignmentIcon">
+        title='Neutral' class="alignmentIcon">
       </td>
       <td title="'Color'" filter="{ type: 'text'}" sortable="'color'">
-        {{card.color}}
+        <div ng-if="card.color == 'red'" title="Red" class="colorIcon redColorIcon" ></div>
+        <div ng-if="card.color == 'blue'" title="Blue" class="colorIcon blueColorIcon" ></div>
+        <div ng-if="card.color == 'yellow'" title="Yellow" class="colorIcon yellowColorIcon" ></div>
+        <div ng-if="card.color == 'gray'" title="Gray" class="colorIcon grayColorIcon" ></div>
       </td>
-      <td title="'Type'" filter="{ type: 'text'}" sortable="'type'">
-        {{card.type}}
+      <td title="'Type'" class="leftAlignCol" filter="{ type: 'text'}" sortable="'type'">
+        {{titleCase(card.type)}}
       </td>
-      <td title="'Resource Cost'" filter="{ resource_cost: 'integer'}" sortable="'resource_cost'">
-        {{card.resource_cost}}
+      <td title="'SubType'" class="leftAlignCol" filter="{ type: 'text'}" sortable="'type'">
+        {{concatArray(card.subtype)}}
+      </td>
+      <td title="'Cost'" filter="{ resource_cost: 'integer'}" sortable="'resource_cost'">
+        <span ng-if="card.point_value" >{{card.point_value}}<span ng-if="card.elite_point_value" >/{{card.elite_point_value}}</span> pts</span>
+        <span ng-if="card.resource_cost" >{{card.resource_cost}}<img src='http://i.imgur.com/UteRmmp.png' class="alignmentIcon" /></span>
       </td>
       <td title="'Dice'" filter="{ dice: 'boolean'}" sortable="'dice'">
-        {{card.has_dice}}
+        <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice"/>
       </td>
-      <td title="'Set'" filter="{ set: 'text'}" sortable="'set'">
-        {{card.set}} {{card.set_number}}
+      <td title="'Set'" class="leftAlignCol" filter="{ set: 'text'}" sortable="'set'">
+        <img class="alignmentIcon" src="http://i.imgur.com/d5Q2UYj.png"/> {{titleCase(card.set)}} {{card.set_number}}
       </td>
     </tr>
   </table>

@@ -7,6 +7,22 @@ define(['ngtable'], function() {
       $scope.data.exampleTableData = result.data;
     });
 
+    $scope.titleCase = function(str) {
+      return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
+
+    $scope.concatArray = function(arr) {
+      var result = "";
+      for(var i=0; i < arr.length; i++) {
+        if(i > 0) {
+          result += " ";
+        }
+        result += $scope.titleCase(arr[i]);
+      }
+
+      return result;
+    }
+
     $scope.clickToOpen = function (card) {
       ngDialog.open(
         {

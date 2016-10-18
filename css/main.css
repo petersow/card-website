@@ -18,7 +18,7 @@ header img.logo {
   height: 75px;
   float: left; }
 
-.nameCol {
+.leftAlignCol {
   text-align: left; }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
@@ -51,6 +51,23 @@ section.content {
     width: 16px; }
 
 .cardViewContainer img {
-  max-height: 250px; }
+  max-width: 185px; }
+
+.colorIcon {
+  width: 16px;
+  height: 16px;
+  margin: 0 auto; }
+
+.redColorIcon {
+  background: #b40804; }
+
+.blueColorIcon {
+  background: #0e8bdf; }
+
+.yellowColorIcon {
+  background: #d6bf7c; }
+
+.grayColorIcon {
+  background: #c7bcaa; }
 
 /*# sourceMappingURL=main.css.map */
