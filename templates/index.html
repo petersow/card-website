@@ -6,7 +6,7 @@
   <table ng-table="vm.tableParams" show-filter="false" class="table table-condensed table-bordered table-striped">
     <tr ng-repeat="card in data.exampleTableData">
       <td title="'Name'" class="nameCol" filter="{ name: 'text'}" sortable="'name'">
-        {{card.name}}
+        <a ng-mouseover="clickToOpen(card)" ng-mouseleave="closeAll()" > {{card.name}} </a>
       </td>
       <td title="'Alignment'" filter="{ alignment: 'text'}" sortable="'alignment'">
         <img ng-if="card.alignment == 'villain'" src="http://i.imgur.com/xMw13Rt.png"
@@ -34,4 +34,10 @@
     </tr>
   </table>
 </section>
+
+<script type="text/ng-template" id="templateId">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>
+
 <footer ngfooter=""></footer>
