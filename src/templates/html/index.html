@@ -5,11 +5,19 @@
   </div>
   <table ng-table="vm.tableParams" show-filter="false" class="table table-condensed table-bordered table-striped">
     <tr ng-repeat="card in data.exampleTableData">
-      <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+      <td title="'Name'" class="nameCol" filter="{ name: 'text'}" sortable="'name'">
         {{card.name}}
       </td>
       <td title="'Alignment'" filter="{ alignment: 'text'}" sortable="'alignment'">
-        {{card.alignment}}
+        <img ng-if="card.alignment == 'villain'" src="http://i.imgur.com/xMw13Rt.png"
+         alt='Villain' class="alignmentIcon">
+        <img ng-if="card.alignment == 'hero'" src="http://i.imgur.com/19X4awj.png"
+        alt='Hero' class="alignmentIcon">
+        <img ng-if="card.alignment == 'neutral'" src="http://i.imgur.com/Q5fYJ9L.png"
+        alt='Neutral' class="alignmentIcon">
+      </td>
+      <td title="'Color'" filter="{ type: 'text'}" sortable="'color'">
+        {{card.color}}
       </td>
       <td title="'Type'" filter="{ type: 'text'}" sortable="'type'">
         {{card.type}}
