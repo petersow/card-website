@@ -18,7 +18,7 @@ header img.logo {
   height: 75px;
   float: left; }
 
-table {
+.nameCol {
   text-align: left; }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
@@ -47,5 +47,7 @@ section.content {
     margin-bottom: 20px; }
   section.content .buttons a {
     margin: 5px; }
+  section.content .alignmentIcon {
+    width: 16px; }
 
 /*# sourceMappingURL=main.css.map */
