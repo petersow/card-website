@@ -2,10 +2,38 @@ define(['ngtable'], function() {
   'use strict';
 
   function indexController($scope, $http, NgTableParams, ngDialog) {
-    $scope.data = {};
     $http.get('https://fsxz0udkr1.execute-api.eu-central-1.amazonaws.com/dev/set/awakenings/card').then(function(result) {
-      $scope.data.exampleTableData = result.data.Items;
+      $scope.tableParams = new NgTableParams({
+        sorting: { set_number: "asc" },
+        count: 200
+      }, { dataset: result.data.Items });
     });
+
+    $scope.alignments = [
+      {id: "villain", title: "Villain"},
+      {id: "hero", title: "Hero"},
+      {id: "neutral", title: "Neutral"}
+    ];
+
+    $scope.colors = [
+      {id: "red", title: "Red"},
+      {id: "blue", title: "Blue"},
+      {id: "yellow", title: "Yellow"},
+      {id: "grey", title: "Grey"}
+    ];
+
+    $scope.types = [
+      {id: "character", title: "Character"},
+      {id: "upgrade", title: "Upgrade"},
+      {id: "support", title: "Support"},
+      {id: "event", title: "Event"},
+      {id: "battlefied", title: "Battlefield"},
+    ];
+
+    $scope.boolean_select = [
+      {id: "true", title: "True"},
+      {id: "false", title: "False"}
+    ]
 
     $scope.titleCase = function(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
