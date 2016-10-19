@@ -33,7 +33,7 @@
       </td>
       <td title="'Cost'">
         <span ng-if="card.point_value" >{{card.point_value}}<span ng-if="card.elite_point_value" >/{{card.elite_point_value}}</span> pts</span>
-        <span ng-if="card.resource_cost" >{{card.resource_cost}}<img src='http://i.imgur.com/UteRmmp.png' class="alignmentIcon" /></span>
+        <span ng-if="card.resource_cost >=0" >{{card.resource_cost}}<img src='http://i.imgur.com/UteRmmp.png' class="alignmentIcon" /></span>
       </td>
       <td title="'Dice'" sortable="'has_dice'"
           filter="{ has_dice: 'select'}" filter-data='boolean_select' >
