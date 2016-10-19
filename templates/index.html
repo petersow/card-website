@@ -3,12 +3,13 @@
   <div class="buttons row">
     <a ng-repeat="lib in data.libs" href="{{lib.url}}" target="_black" class="btn btn-default btn-sm">{{lib.name}}</a>
   </div>
-  <table ng-table="vm.tableParams" show-filter="false" class="table table-condensed table-bordered table-striped">
-    <tr ng-repeat="card in data.exampleTableData">
-      <td title="'Name'" class="leftAlignCol" filter="{ name: 'text'}" sortable="'name'">
+  <table ng-table="tableParams" show-filter="true" class="table table-condensed table-bordered table-striped">
+    <tr ng-repeat="card in $data">
+      <td title="'Name'" class="leftAlignCol" sortable="'name'" filter="{name: 'text'}" >
         <a ng-mouseover="clickToOpen(card)" ng-mouseleave="closeAll()" > {{card.name}} </a>
       </td>
-      <td title="'Alignment'" filter="{ alignment: 'text'}" sortable="'alignment'">
+      <td title="'Alignment'" sortable="'alignment'"
+          filter="{ alignment: 'select'}" filter-data='alignments' >
         <img ng-if="card.alignment == 'villain'" src="http://i.imgur.com/xMw13Rt.png"
          title='Villain' class="alignmentIcon">
         <img ng-if="card.alignment == 'hero'" src="http://i.imgur.com/19X4awj.png"
@@ -16,26 +17,29 @@
         <img ng-if="card.alignment == 'neutral'" src="http://i.imgur.com/Q5fYJ9L.png"
         title='Neutral' class="alignmentIcon">
       </td>
-      <td title="'Color'" filter="{ type: 'text'}" sortable="'color'">
+      <td title="'Color'" sortable="'color'"
+          filter="{ color: 'select'}" filter-data='colors'>
         <div ng-if="card.color == 'red'" title="Red" class="colorIcon redColorIcon" ></div>
         <div ng-if="card.color == 'blue'" title="Blue" class="colorIcon blueColorIcon" ></div>
         <div ng-if="card.color == 'yellow'" title="Yellow" class="colorIcon yellowColorIcon" ></div>
         <div ng-if="card.color == 'gray'" title="Gray" class="colorIcon grayColorIcon" ></div>
       </td>
-      <td title="'Type'" class="leftAlignCol" filter="{ type: 'text'}" sortable="'type'">
+      <td title="'Type'" class="leftAlignCol" sortable="'type'"
+          filter="{ type: 'select'}" filter-data='types'>
         {{titleCase(card.type)}}
       </td>
-      <td title="'SubType'" class="leftAlignCol" filter="{ type: 'text'}" sortable="'type'">
+      <td title="'SubType'" class="leftAlignCol">
         <span ng-if="card.subtype" >{{concatArray(card.subtype)}}</span>
       </td>
-      <td title="'Cost'" filter="{ resource_cost: 'integer'}" sortable="'resource_cost'">
+      <td title="'Cost'">
         <span ng-if="card.point_value" >{{card.point_value}}<span ng-if="card.elite_point_value" >/{{card.elite_point_value}}</span> pts</span>
         <span ng-if="card.resource_cost" >{{card.resource_cost}}<img src='http://i.imgur.com/UteRmmp.png' class="alignmentIcon" /></span>
       </td>
-      <td title="'Dice'" filter="{ dice: 'boolean'}" sortable="'dice'">
-        <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice"/>
+      <td title="'Dice'" sortable="'has_dice'"
+          filter="{ has_dice: 'select'}" filter-data='boolean_select' >
+        <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
       </td>
-      <td title="'Set'" class="leftAlignCol" filter="{ set: 'text'}" sortable="'set'">
+      <td title="'Set'" class="leftAlignCol" sortable="'set_number'">
         <img class="alignmentIcon" src="http://i.imgur.com/d5Q2UYj.png"/> {{titleCase(card.set)}} {{card.set_number}}
       </td>
     </tr>
