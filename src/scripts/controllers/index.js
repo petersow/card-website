@@ -3,9 +3,25 @@ define(['ngtable'], function() {
 
   function indexController($scope, $http, NgTableParams, ngDialog) {
     $scope.data = {};
-    $http.get('data/example.json').then(function(result) {
-      $scope.data.exampleTableData = result.data;
+    $http.get('https://fsxz0udkr1.execute-api.eu-central-1.amazonaws.com/dev/set/awakenings/card').then(function(result) {
+      $scope.data.exampleTableData = result.data.Items;
     });
+
+    $scope.titleCase = function(str) {
+      return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
+
+    $scope.concatArray = function(arr) {
+      var result = "";
+      for(var i=0; i < arr.length; i++) {
+        if(i > 0) {
+          result += " ";
+        }
+        result += $scope.titleCase(arr[i]);
+      }
+
+      return result;
+    }
 
     $scope.clickToOpen = function (card) {
       ngDialog.open(
