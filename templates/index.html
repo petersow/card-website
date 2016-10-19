@@ -26,7 +26,7 @@
         {{titleCase(card.type)}}
       </td>
       <td title="'SubType'" class="leftAlignCol" filter="{ type: 'text'}" sortable="'type'">
-        {{concatArray(card.subtype)}}
+        <span ng-if="card.subtype" >{{concatArray(card.subtype)}}</span>
       </td>
       <td title="'Cost'" filter="{ resource_cost: 'integer'}" sortable="'resource_cost'">
         <span ng-if="card.point_value" >{{card.point_value}}<span ng-if="card.elite_point_value" >/{{card.elite_point_value}}</span> pts</span>
