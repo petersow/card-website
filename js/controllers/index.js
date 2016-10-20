@@ -3,6 +3,7 @@ define(['ngtable'], function() {
 
   function indexController($scope, $http, NgTableParams, ngDialog) {
     $http.get('https://fsxz0udkr1.execute-api.eu-central-1.amazonaws.com/dev/set/awakenings/card').then(function(result) {
+      $scope.totalLoaded = result.data.Count;
       $scope.tableParams = new NgTableParams({
         sorting: { set_number: "asc" },
         count: 200
