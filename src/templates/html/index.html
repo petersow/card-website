@@ -6,7 +6,12 @@
   <table ng-table="tableParams" show-filter="true" class="table table-condensed table-bordered table-striped">
     <tr ng-repeat="card in $data">
       <td title="'Name'" class="leftAlignCol" sortable="'name'" filter="{name: 'text'}" >
-        <a ng-mouseover="clickToOpen(card)" ng-mouseleave="closeAll()" > {{card.name}} </a>
+        <a ng-mouseover="clickToOpen(card)" ng-mouseleave="closeAll()" >
+          <span ng-if="card.unique == true">*</span>
+          <span> {{card.name}} </span>
+          <span ng-if="card.character_sub_title">- {{card.character_sub_title}}</span>
+          <span ng-if="card.battlefield_location">- {{card.battlefield_location}}</span>
+        </a>
       </td>
       <td title="'Alignment'" sortable="'alignment'"
           filter="{ alignment: 'select'}" filter-data='alignments' >
