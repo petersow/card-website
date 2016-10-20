@@ -1,9 +1,9 @@
-$backgroundColor: white
+$backgroundColor: #F8FAFA
 $textColor: black
 $headerColor: black
 $headerTextColor: #0088e5
-$tableRowOne: white
-$tableRowTwo: #36c4ec
+$tableRowOne: #F8FAFA
+$tableRowTwo: #EAF4F4
 $tableBorderColor: #0088e5
 
 $redFaction: #b40804
@@ -17,6 +17,11 @@ body
     color: $textColor
     font-size: 16px
     font-family: 'LatoWeb', sans-serif
+
+body a,
+body a:link,
+body a:visited
+    color: $headerTextColor
 
 footer
     font-size: 0.8em
@@ -91,3 +96,13 @@ section.content
 
 .grayColorIcon
     background: $grayFaction
+
+article.contentWrapper
+    section.content
+        width: 85%
+        float: left
+    section.advert
+        margin-top: 40%
+        width: 15%
+        max-width: 300px
+        float: left

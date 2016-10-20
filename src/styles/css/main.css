@@ -1,9 +1,14 @@
 body {
-  background: white;
+  background: #F8FAFA;
   text-align: center;
   color: black;
   font-size: 16px;
   font-family: "LatoWeb", sans-serif; }
+
+body a,
+body a:link,
+body a:visited {
+  color: #0088e5; }
 
 footer {
   font-size: 0.8em; }
@@ -22,10 +27,10 @@ header img.logo {
   text-align: left; }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background: white; }
+  background: #F8FAFA; }
 
 .table-striped > tbody > tr:nth-of-type(even) {
-  background: #36c4ec; }
+  background: #EAF4F4; }
 
 .table-bordered {
   border: none;
@@ -69,5 +74,14 @@ section.content {
 
 .grayColorIcon {
   background: #c7bcaa; }
+
+article.contentWrapper section.content {
+  width: 85%;
+  float: left; }
+article.contentWrapper section.advert {
+  margin-top: 40%;
+  width: 15%;
+  max-width: 300px;
+  float: left; }
 
 /*# sourceMappingURL=main.css.map */
