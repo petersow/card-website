@@ -53,6 +53,7 @@ section.content {
   section.content .buttons a {
     margin: 5px; }
   section.content .alignmentIcon {
+    margin-top: -6px;
     width: 16px; }
 
 .cardViewContainer img {
@@ -74,6 +75,21 @@ section.content {
 
 .grayColorIcon {
   background: #c7bcaa; }
+
+.starterColorIcon {
+  background: #a59c95; }
+
+.commonColorIcon {
+  background: #3a7887; }
+
+.uncommonColorIcon {
+  background: #ceb541; }
+
+.rareColorIcon {
+  background: #a2ab6a; }
+
+.legendaryColorIcon {
+  background: #b78a8d; }
 
 article.contentWrapper section.content {
   width: 85%;

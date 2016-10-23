@@ -43,7 +43,21 @@
         </td>
         <td title="'Dice'" sortable="'has_dice'"
             filter="{ has_dice: 'select'}" filter-data='boolean_select' >
-          <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
+            <div ng-if="card.rarity == 'starter'" title="Starter" class="colorIcon starterColorIcon" >
+                <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
+            </div>
+            <div ng-if="card.rarity == 'common'" title="Common" class="colorIcon commonColorIcon" >
+                <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
+            </div>
+            <div ng-if="card.rarity == 'uncommon'" title="Uncommon" class="colorIcon uncommonColorIcon" >
+                <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
+            </div>
+            <div ng-if="card.rarity == 'rare'" title="Rare" class="colorIcon rareColorIcon" >
+                <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
+            </div>
+            <div ng-if="card.rarity == 'legendary'" title="Legendary" class="colorIcon legendaryColorIcon" >
+                <img src="http://i.imgur.com/fd1t1r4.png" class="alignmentIcon" ng-if="card.has_dice == true"/>
+            </div>
         </td>
         <td title="'Set'" class="leftAlignCol" sortable="'set_number'">
           <img class="alignmentIcon" src="http://i.imgur.com/d5Q2UYj.png"/> {{titleCase(card.set)}} {{card.set_number}}

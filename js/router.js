@@ -7,6 +7,10 @@ define(['controllers', 'directives'], function() {
 				templateUrl: 'templates/index.html',
 				controller: 'indexController'
 			}).
+			when('/deckbuilder', {
+				templateUrl: 'templates/deck-builder.html',
+				controller: 'deckBuilderController'
+			}).
 			otherwise({
 				redirectTo: '/'
 			});
